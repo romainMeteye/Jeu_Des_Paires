@@ -52,7 +52,7 @@ for(let card of cards) {
                 waiting[0].setAttribute("class","gameCard");
                 }
             setTimeout(function() {
-                wrongAnswer();     
+                wrongAnswer(); 
             }, 500);
         }
 
@@ -65,6 +65,8 @@ for(let card of cards) {
             for(i = 0; 0 !== cardsReturn.length; i++) {
                 gameCards[i].removeChild(cardsReturn[0]);
                 }
+                randomList = []
+                liste = ['red', 'blue', 'green', 'yellow', 'pink', 'cyan', 'orange', 'purple','black','brown','dark_green','lime','magenta','white']
                 doRandom();
             }
             setTimeout(function() {
