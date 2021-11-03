@@ -24,10 +24,33 @@ function doRandom() {
    return randomList;
 }
 doRandom();
+console.log(randomList);
 
 let cards = document.getElementsByClassName("gameCard");
 for(let card of cards) {
     card.onclick = function() {
         this.innerHTML = `<img src="img/return_${randomList[this.id]}.png" alt="" class="return">`
-    };
+        let inQueue = document.getElementById("waiting")
+            this.setAttribute("class","gameCard waiting");
+
+
+        let waiting = document.getElementsByClassName("waiting")
+        let returned = document.getElementsByClassName("return");
+        console.log(waiting);
+        console.log(returned);
+        if(waiting[1] === undefined) {
+
+        }
+        else if(randomList[waiting[0].id] === randomList[waiting[1].id]) {
+            waiting[0].setAttribute("class","gameCard");
+            waiting[0].setAttribute("class","gameCard");
+            returned[0].setAttribute("class","OK");
+            returned[0].setAttribute("class","OK");
+        } else {
+            waiting[0].removeChild(returned[0]);
+            waiting[1].removeChild(returned[0]);
+            waiting[0].setAttribute("class","gameCard");
+            waiting[0].setAttribute("class","gameCard");
+        }
+    }
 }
