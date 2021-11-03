@@ -1,5 +1,5 @@
 let randomList = [];
-let liste = ['red', 'blue', 'green', 'yellow', 'pink', 'cyan', 'orange', 'purple'];
+let liste = ['red', 'blue', 'green', 'yellow', 'pink', 'cyan', 'orange', 'purple','black','brown','dark_green','lime','magenta','white'];
 
 function arrayShuffle(array) {
     var lenght = array.length, index, random;
@@ -23,21 +23,19 @@ function doRandom() {
     arrayShuffle(randomList);
    return randomList;
 }
+
+
 doRandom();
-console.log(randomList);
 
 let cards = document.getElementsByClassName("gameCard");
 for(let card of cards) {
     card.onclick = function() {
         this.innerHTML = `<img src="img/return_${randomList[this.id]}.png" alt="" class="return">`
-        let inQueue = document.getElementById("waiting")
             this.setAttribute("class","gameCard waiting");
 
 
         let waiting = document.getElementsByClassName("waiting")
         let returned = document.getElementsByClassName("return");
-        console.log(waiting);
-        console.log(returned);
         if(waiting[1] === undefined) {
 
         }
@@ -47,10 +45,31 @@ for(let card of cards) {
             returned[0].setAttribute("class","OK");
             returned[0].setAttribute("class","OK");
         } else {
-            waiting[0].removeChild(returned[0]);
-            waiting[1].removeChild(returned[0]);
-            waiting[0].setAttribute("class","gameCard");
-            waiting[0].setAttribute("class","gameCard");
+            function wrongAnswer() {
+                waiting[0].removeChild(returned[0]);
+                waiting[1].removeChild(returned[0]);
+                waiting[0].setAttribute("class","gameCard");
+                waiting[0].setAttribute("class","gameCard");
+                }
+            setTimeout(function() {
+                wrongAnswer();     
+            }, 500);
+        }
+
+        let cardsReturn = document.getElementsByClassName("OK");
+        let gameCards = document.getElementsByClassName("gameCard");
+
+        if(cardsReturn.length === 12) {
+            function endingGame() {
+            alert("Vous avez gagné !")
+            for(i = 0; 0 !== cardsReturn.length; i++) {
+                gameCards[i].removeChild(cardsReturn[0]);
+                }
+                doRandom();
+            }
+            setTimeout(function() {
+                endingGame();     
+             }, 100);
         }
     }
 }
