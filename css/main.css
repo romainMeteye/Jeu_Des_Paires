@@ -86,7 +86,79 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+header {
+  background-color: #A7A7A9;
+  width: 100%;
+  height: 20vh;
+}
+.header {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.headerlogo {
+  width: 40%;
+  height: 20vh;
+}
+.logo {
+  height: 70%;
+  width: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1rem;
+}
+.titre {
+  height: 20%;
+  font-size: 6vh;
+  color: #FFF;
+  margin-right: 1rem;
+}
+.gameInterface {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-image: url(../img/istockphoto-905484364-612x612.jpg);
+}
+.gameCard {
+  position: relative;
+  height: 20vh;
+  width: 13vh;
+  margin: 1rem;
+  background-image: url(../img/red_card.png);
+  background-size: 100% 100%;
+}
 
+.return {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 670px) {
+  .gameCard {
+    height: 18vh;
+    width: 12vh;
+  }
+}
+@media (min-width: 768px) {
+  .gameCard {
+    height: 21vh;
+    width: 14vh;
+    margin: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .gameCard {
+    height: 24vh;
+    width: 15.6vh;
+  }
+}
+@media (min-width: 1200px) {
+  .gameCard {
+    height: 26vh;
+    width: 17vh;
+  }
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
