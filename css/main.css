@@ -86,7 +86,10 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-header {
+* {
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+   header {
   background-image: url(../img/unnamed.jpg);
   width: 100%;
   height: 20vh;
@@ -109,24 +112,50 @@ header {
 }
 .titre {
   height: 20%;
-  font-size: 4.5vh;
+  font-size: 3.2rem;
   color: #FFF;
   margin-right: 1rem;
 }
+.optionLayer {
+  width: 100%;
+  height: auto;
+  background-color: #222;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.optionSelect {
+  width: 33%;
+  text-align: center;
+}
+.optionBtn {
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.startBtn {
+  width: 31vw;
+  height: auto;
+  font-size: 2rem;
+  background-color: gold;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
 .gameInterface {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   background-image: url(../img/istockphoto-905484364-612x612.jpg);
 }
 .gameCard {
-  position: relative;
   height: 15vh;
   width: 9.75vh;
   margin: 1rem;
   background-image: url(../img/red_card.png);
   background-size: 100% 100%;
+  display: none;
 }
 
 .return {
@@ -137,7 +166,13 @@ header {
   width: 100%;
   height: 100%;
 }
-
+.timerDisplay {
+  display: flex;
+  /* position: absolute; */
+  font-size: 3rem;
+  align-items: flex-end;
+  color: #FFF;
+}
 @media (min-width: 670px) {
   .gameCard {
     height: 16vh;
@@ -151,6 +186,9 @@ header {
     width: 14vh;
     margin: 2rem;
   }
+  .optionBtn {
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 992px) {
   .gameCard {
@@ -160,26 +198,32 @@ header {
   .logo {
     height: 80%;
   }
-  .titre {
-    font-size: 5rem;
+  .startBtn {
+    width: 20vw;
+  }
+  .optionBtn {
+    font-size: 2rem;
+  }
+  .startBtn {
+    font-size: 2.6rem;
   }
 }
 @media (min-width: 1200px) {
   .gameCard {
-    height: 25vh;
-    width: 18vh;
+    height: 23vh;
+    width: 16vh;
   }
 }
 @media (min-width: 1400px) {
   .gameCard {
-    height: 28vh;
-    width: 19vh;
+    height: 30vh;
+    width: 20.6vh;
   }
 }
 @media (min-width: 2300px) {
   .gameCard {
-    height: 32vh;
-    width: 21vh;
+    height: 36vh;
+    width: 23.4vh;
     margin: 3rem;
   }
 }
